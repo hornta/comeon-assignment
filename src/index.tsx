@@ -1,14 +1,17 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import "fomantic-ui-css/semantic.min.css";
+
+import React from "react";
+
+import ReactDOM from "react-dom";
+import "./index.css";
+import reportWebVitals from "./report-web-vitals";
+import { App } from "./app/app";
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
+	<React.StrictMode>
+		<App />
+	</React.StrictMode>,
+	document.querySelector("#root")
 );
 
 // If you want to start measuring performance in your app, pass a function
