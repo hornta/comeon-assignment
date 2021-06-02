@@ -1,4 +1,3 @@
-import React from "react";
 import "./game-launch.css";
 
 const games: Record<string, string> = {

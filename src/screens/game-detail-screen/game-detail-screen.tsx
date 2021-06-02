@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import { GAME_REFERRER_KEY } from "../../shared/constants";
 import { GameLaunch } from "../../shared/game-launch/game-launch";

@@ -1,4 +1,4 @@
-import React, { ChangeEventHandler, FormEventHandler } from "react";
+import { ChangeEventHandler, FormEventHandler } from "react";
 import { useDocumentTitle } from "../../shared/utils";
 import { useAppDispatch, useAppSelector } from "../../store";
 import { authenticate, editPassword, editUsername } from "./login-actions";
@@ -46,9 +46,12 @@ export const LoginScreen = () => {
 					<div className="fields">
 						<div className="required field">
 							<div className="ui input labeled">
-								<div className="ui label">Username</div>
+								<label className="ui label" htmlFor="fieldUsername">
+									Username
+								</label>
 								<input
 									type="text"
+									id="fieldUsername"
 									required
 									value={username}
 									onChange={handleChangeUsername}
@@ -57,9 +60,12 @@ export const LoginScreen = () => {
 						</div>
 						<div className="required field">
 							<div className="ui input labeled">
-								<div className="ui label">Password</div>
+								<label className="ui label" htmlFor="fieldPassword">
+									Password
+								</label>
 								<input
 									type="password"
+									id="fieldPassword"
 									required
 									value={password}
 									onChange={handleChangePassword}

@@ -1,5 +1,5 @@
 import { gameSelectors, useAppSelector } from "../../store";
-import React, { useMemo } from "react";
+import { useMemo } from "react";
 import { Link, useLocation } from "react-router-dom";
 import "./game-list.css";
 import { GAME_REFERRER_KEY } from "../constants";
@@ -45,9 +45,9 @@ export const GameList = ({ categoryFilter, search }: GameListProps) => {
 					<span className="search-term">&quot;{search}&quot;</span> found
 				</span>
 			)}
-			<div className="ui relaxed divided game items links">
+			<ul className="ui relaxed divided game items links" aria-label="Games">
 				{games.map((game) => (
-					<div className="game item" key={game.code}>
+					<li className="game item" key={game.code}>
 						<div className="ui small image">
 							<img src={`/${game.icon}`} alt={game.name} />
 						</div>
@@ -70,9 +70,9 @@ export const GameList = ({ categoryFilter, search }: GameListProps) => {
 								</Link>
 							</div>
 						</div>
-					</div>
+					</li>
 				))}
-			</div>
+			</ul>
 		</section>
 	);
 };

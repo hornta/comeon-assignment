@@ -1,9 +1,4 @@
-import React, {
-	MouseEventHandler,
-	useCallback,
-	useEffect,
-	useState,
-} from "react";
+import { MouseEventHandler, useCallback, useEffect, useState } from "react";
 import { useAppDispatch, useAppSelector } from "../../store";
 import { logout } from "../../shared/session/session-actions";
 import { GameList } from "../../shared/game-list/game-list";

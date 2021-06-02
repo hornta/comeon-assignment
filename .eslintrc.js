@@ -5,8 +5,7 @@ module.exports = {
 	},
 	extends: [
 		"eslint:recommended",
-		"plugin:jest/recommended",
-		"plugin:jest/style",
+		"plugin:jest/all",
 		"plugin:testing-library/react",
 		"plugin:prettier/recommended",
 		"prettier",
@@ -78,6 +77,8 @@ module.exports = {
 			},
 			plugins: ["react", "@typescript-eslint"],
 			extends: [
+				"plugin:jest/all",
+				"plugin:testing-library/react",
 				"plugin:react/recommended",
 				"plugin:react-hooks/recommended",
 				"plugin:unicorn/recommended",
@@ -110,6 +111,8 @@ module.exports = {
 				// deprecated, see https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/blob/master/docs/rules/label-has-for.md#deprecated-label-has-for
 				"jsx-a11y/label-has-for": "off",
 				"jsx-a11y/label-has-associated-control": "error",
+
+				"react/react-in-jsx-scope": "off",
 			},
 		},
 	],

@@ -1,16 +1,21 @@
 import "fomantic-ui-css/semantic.min.css";
-
-import React from "react";
-
+import { StrictMode } from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
 import reportWebVitals from "./report-web-vitals";
 import { App } from "./app/app";
+import { store } from "./store";
+import { BrowserRouter } from "react-router-dom";
+import { Provider } from "react-redux";
 
 ReactDOM.render(
-	<React.StrictMode>
-		<App />
-	</React.StrictMode>,
+	<StrictMode>
+		<BrowserRouter>
+			<Provider store={store}>
+				<App />
+			</Provider>
+		</BrowserRouter>
+	</StrictMode>,
 	document.querySelector("#root")
 );
 
