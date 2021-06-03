@@ -8,18 +8,16 @@ export const CategoryList = () => {
 	const match = useRouteMatch();
 
 	return (
-		<section>
-			<h3 className="ui dividing header">Categories</h3>
-			<ul
-				className="ui selection animated list category items"
-				aria-label="Categories"
-			>
+		<section aria-labelledby="categories">
+			<header>
+				<h3 className="ui dividing header" id="categories">
+					Categories
+				</h3>
+			</header>
+			<ul className="ui selection animated list category">
 				{categories.map((category) => (
-					<li key={category.id}>
-						<Link
-							to={`${match.url}?${FILTER_CATEGORY_PARAM}=${category.id}`}
-							className="category item"
-						>
+					<li key={category.id} className="category item">
+						<Link to={`${match.url}?${FILTER_CATEGORY_PARAM}=${category.id}`}>
 							<div className="content">
 								<div className="header">{category.name}</div>
 							</div>

@@ -37,19 +37,29 @@ export const GameList = ({ categoryFilter, search }: GameListProps) => {
 	const location = useLocation();
 
 	return (
-		<section>
-			<h3 className="ui dividing header">Games</h3>
+		<section aria-labelledby="games">
+			<header>
+				<h3 className="ui dividing header" id="games">
+					Games
+				</h3>
+			</header>
 			{search && (
 				<span className="search-results-listing">
 					{games.length} result{games.length !== 1 && "s"} for{" "}
 					<span className="search-term">&quot;{search}&quot;</span> found
 				</span>
 			)}
-			<ul className="ui relaxed divided game items links" aria-label="Games">
+			<ul className="ui relaxed divided game items links">
 				{games.map((game) => (
 					<li className="game item" key={game.code}>
 						<div className="ui small image">
-							<img src={`/${game.icon}`} alt={game.name} />
+							<img
+								src={`/${game.icon}`}
+								alt={game.name}
+								loading="lazy"
+								width="140"
+								height="140"
+							/>
 						</div>
 						<div className="content">
 							<div className="header">

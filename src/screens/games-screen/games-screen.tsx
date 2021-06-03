@@ -43,6 +43,9 @@ export const GamesScreen = () => {
 								className="ui avatar image"
 								src={`/${playerSession.avatar}`}
 								alt={playerSession.name}
+								loading="lazy"
+								width="50"
+								height="50"
 							/>
 
 							<div className="content">
