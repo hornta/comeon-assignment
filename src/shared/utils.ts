@@ -2,6 +2,9 @@ import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 
 export const useQueryParameter = (name: string) => {
+	if (name === "") {
+		throw new TypeError("empty string passed to useQueryParameter");
+	}
 	const location = useLocation();
 	const searchParameters = new URLSearchParams(location.search);
 	const [queryParameter, setQueryParameter] = useState(
