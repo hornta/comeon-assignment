@@ -25,6 +25,8 @@
 		"bfj": "^7.0.2",
 		"camelcase": "^6.1.0",
 		"case-sensitive-paths-webpack-plugin": "2.3.0",
+		"concurrently": "^6.2.0",
+		"cross-env": "^7.0.3",
 		"css-loader": "4.3.0",
 		"dotenv": "8.2.0",
 		"dotenv-expand": "5.1.0",
@@ -90,7 +92,8 @@
 		"build": "node scripts/build.js",
 		"test": "node scripts/test.js",
 		"lint": "eslint . --ext js,jsx,ts,tsx",
-		"tsc": "tsc"
+		"tsc": "tsc",
+		"ci": "cross-env CI=true concurrently \"yarn:test\" \"yarn:lint\" \"yarn:tsc\""
 	},
 	"browserslist": {
 		"production": [

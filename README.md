@@ -2,19 +2,21 @@
 ## Usage
 ```
 yarn install
-yarn start:api
 ```
 
 ### dev
-`yarn start`
+```
+yarn start:api
+yarn start
+```
 
 ### prod
 ```
 yarn build
+yarn start:api
 yarn start:prod
 ```
 
 ## CI
-- yarn lint
-- yarn tsc
-- yarn test
+Runs test suite, checks for type errors and perform static code analysis.
+- yarn ci

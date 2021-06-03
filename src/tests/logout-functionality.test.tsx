@@ -32,8 +32,12 @@ describe("logout functionality", () => {
 		);
 		render(<App />);
 		userEvent.click(screen.getByText(/log out/i));
-		const usernameField = screen.getByLabelText(/username/i);
-		const passwordField = screen.getByLabelText(/password/i);
+		const usernameField = screen.getByLabelText(
+			/username/i
+		) as HTMLInputElement;
+		const passwordField = screen.getByLabelText(
+			/password/i
+		) as HTMLInputElement;
 		expect(usernameField).toBeVisible();
 		expect(passwordField).toBeVisible();
 		expect(usernameField.value).toStrictEqual("");

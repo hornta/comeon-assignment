@@ -1,12 +1,10 @@
 import { screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
-import { rest } from "msw";
 import { App } from "../app/app";
-import { server } from "../mocks/server";
-import { API_BASE_URL, SESSION_STORAGE_KEY } from "../shared/constants";
+import { SESSION_STORAGE_KEY } from "../shared/constants";
 import { games } from "../shared/game-launch/game-launch";
 import { render } from "../test-utils";
-import mockData from "../../mock/mock-data.json";
+import { Player } from "../types";
 
 const playerSession: Player = {
 	avatar: "",

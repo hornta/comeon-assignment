@@ -36,7 +36,7 @@ const TestProvider = ({
 };
 
 interface CustomRenderOptions {
-	testProviderProps?: TestProviderProps;
+	testProviderProps?: Partial<TestProviderProps>;
 	testingLibraryOptions?: RenderOptions;
 }
 
@@ -44,7 +44,7 @@ type WrapperComponentProps = {
 	children: any;
 };
 
-const customRender = (ui: ReactElement, options: CustomRenderOptions) => {
+const customRender = (ui: ReactElement, options?: CustomRenderOptions) => {
 	let store = options?.testProviderProps?.store;
 	if (!store) {
 		store = makeStore() as Store;

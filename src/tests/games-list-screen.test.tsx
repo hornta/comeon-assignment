@@ -3,6 +3,7 @@ import userEvent from "@testing-library/user-event";
 import { App } from "../app/app";
 import { SESSION_STORAGE_KEY } from "../shared/constants";
 import { render } from "../test-utils";
+import { Player } from "../types";
 
 const playerSession: Player = {
 	avatar: "",
