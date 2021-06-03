@@ -1,4 +1,4 @@
-import { renderHook } from "@testing-library/react-hooks";
+import { act, renderHook } from "@testing-library/react-hooks";
 import { createMemoryHistory } from "history";
 import { FC } from "react";
 import {
@@ -44,30 +44,15 @@ describe("utils", () => {
 		);
 	});
 
-	// look into fixing this test
-	// eslint-disable-next-line jest/no-disabled-tests
-	it.skip("should handle changes to location.search", () => {
+	it("should handle changes to location.search", () => {
 		expect.assertions(2);
 
 		const history = createMemoryHistory({
-			initialEntries: [{ search: "?foo=first" }],
+			initialEntries: ["?foo=first"],
 		});
 
-		interface CustomWrapperProps extends WrapperProps {
-			redirect: boolean;
-		}
-
-		const wrapper: FC<CustomWrapperProps> = ({
-			children,
-			redirect,
-			history,
-		}) => (
-			<Router history={history}>
-				{children}
-				{redirect && (
-					<Redirect from="?foo=first" to={{ search: "?foo=second" }} />
-				)}
-			</Router>
+		const wrapper: FC<WrapperProps> = ({ children, history }) => (
+			<Router history={history}>{children}</Router>
 		);
 		const { result } = renderHook(() => useQueryParameter("foo"), {
 			wrapper,
@@ -77,7 +62,9 @@ describe("utils", () => {
 		});
 		expect(result.current).toBe("first");
 
-		history.push({ search: "?foo=second" });
+		act(() => {
+			history.push("?foo=second");
+		});
 
 		expect(result.current).toBe("second");
 	});
