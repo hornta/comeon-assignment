@@ -19,4 +19,4 @@ yarn start:prod
 
 ## CI
 Runs test suite, checks for type errors and perform static code analysis.
-- yarn ci
+`yarn ci`
