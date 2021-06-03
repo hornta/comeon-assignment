@@ -4,7 +4,6 @@ import { FC } from "react";
 import {
 	Router,
 	RouterProps,
-	Redirect,
 	MemoryRouter,
 	MemoryRouterProps,
 } from "react-router-dom";
@@ -22,7 +21,7 @@ describe("utils", () => {
 			wrapper,
 			initialProps: {
 				history: createMemoryHistory({
-					initialEntries: [{ search: "?foo=bar" }],
+					initialEntries: ["?foo=bar"],
 				}),
 			},
 		});
